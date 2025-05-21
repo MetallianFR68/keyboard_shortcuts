@@ -199,6 +199,24 @@ $(function ()
 				return false
 			}
 
+      if (typeof rcube_calendar != 'undefined')
+      {
+        //t = appointment
+        if (e.shiftKey == false && e.keyCode == 84)
+        {
+          rcmail.command('calendar-create-from-mail','',this,event)
+          return false
+        }
+
+        //T = Calendar
+        if (e.shiftKey == true && e.keyCode == 84)
+        {
+          rcmail.command('switch-task','calendar',this,event)
+          return false
+        }
+      }
+			
+
 			//u = update (check for mail)
 			if (e.shiftKey == false && e.keyCode == 85)
 			{

@@ -7,5 +7,7 @@ $labels['help'] = 'Помощь';
 $labels['selectallvisiblemessages'] = 'Выделить все видимые сообщения';
 $labels['markallvisiblemessagesasread'] = 'Пометить все видимые сообщения как прочитанные';
 $labels['title'] = 'Горячие клавиши';
+$labels['createfrommail'] = 'Сохранить как событие';
+$labels['arialabelcalendarview'] = 'Вид календаря';
 
 ?>

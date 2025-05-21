@@ -20,5 +20,7 @@ $labels['show'] = 'Zobrazit';
 $labels['help'] = 'Nápověda';
 $labels['selectallvisiblemessages'] = 'Vybrat všechny viditelné zprávy';
 $labels['markallvisiblemessagesasread'] = 'Označit všechny viditelné zprávy jako přečtené';
+$labels['createfrommail'] = 'Uložit jako událost';
+$labels['arialabelcalendarview'] = 'Pohled na kalendář';
 
 ?>

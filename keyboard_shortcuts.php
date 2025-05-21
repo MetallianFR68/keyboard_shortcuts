@@ -31,6 +31,8 @@
  * r:	Reply to message
  * R:	Reply to all of message
  * s:	Jump to quicksearch
+ * t: create appointment
+ * T: show Calendar
  * /:	Jump to quicksearch
  * u:	Check for new mail (update)
  *
@@ -74,8 +76,11 @@ class keyboard_shortcuts extends rcube_plugin
 
         $this->load_config();
         $keyboard_shortcuts = $rcmail->config->get('keyboard_shortcuts_extras', array());
-
+		  
+		$isCalendar_installed = is_dir(RCUBE_PLUGINS_DIR . "/calendar");
+		
         $c = "";
+		   
         $c .= "<a class='keyboard_shortcuts' href='#' title='".$this->gettext("keyboard_shortcuts")." ".$this->gettext("show")."' onclick='return keyboard_shortcuts_show_help()'><span class='inner'>" . $this->gettext("title") . "</span></a>\n";
         $c .= "<div id='keyboard_shortcuts_help'>";
         $c .= "<div><h4>".$this->gettext("mailboxview")."</h4>";
@@ -96,11 +101,17 @@ class keyboard_shortcuts extends rcube_plugin
         $c .= "<div class='shortcut_key'>r</div> ".$this->gettext('replytomessage')."<br class='clear' />";
         $c .= "<div class='shortcut_key'>R</div> ".$this->gettext('replytoallmessage')."<br class='clear' />";
         $c .= "<div class='shortcut_key'>s</div> ".$this->gettext('quicksearch')."<br class='clear' />";
+		  
+        if ($isCalendar_installed) {
+          $c .= "<div class='shortcut_key'>t</div> ".$this->gettext('createfrommail')."<br class='clear' />";
+          $c .= "<div class='shortcut_key'>t</div> ".$this->gettext('arialabelcalendarview')."<br class='clear' />";
+        }		  
+		  
         $c .= "<div class='shortcut_key'>/</div> ".$this->gettext('quicksearch')."<br class='clear' />";
         $c .= "<div class='shortcut_key'>u</div> ".$this->gettext('checkmail')."<br class='clear' />";
         $c .= "<div class='shortcut_key'> </div> <br class='clear' />";
+		  
         $c .= "</div>";
-
         if(!is_object($rcmail->get_storage())){
           $rcmail->storage_connect();
         }

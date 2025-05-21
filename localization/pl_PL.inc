@@ -7,5 +7,7 @@ $labels['show'] = 'Pokaż';
 $labels['help'] = 'Pomoc';
 $labels['selectallvisiblemessages'] = 'Zaznacz wszystkie widoczne wiadomości';
 $labels['markallvisiblemessagesasread'] = 'Zaznacz wszystkie widoczne wiadomości jako przeczytane';
+$labels['createfrommail'] = 'Zapisz jako zdarzenie';
+$labels['arialabelcalendarview'] = 'Podgląd kalendarza';
 
 ?>
